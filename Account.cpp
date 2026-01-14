@@ -1,20 +1,16 @@
 #include "account.h"
 #include <iostream>
 #include <cstring>
-
 using namespace std;
 
 // Create a new account
 void Account::createAccount(int accNo) {
     accountNumber = accNo;
-
     cout << "Enter Account Holder Name: ";
     cin.ignore();
     cin.getline(name, 50);
-
     cout << "Set Password: ";
     cin.getline(password, 20);
-
     cout << "Enter Initial Balance: ";
     cin >> balance;
 }
@@ -31,9 +27,8 @@ void Account::deposit(double amount) {
 
 // Withdraw money with balance check
 bool Account::withdraw(double amount) {
-    if (amount > balance) {
-        return false;
-    }
+    if (amount > balance)
+    {return false;}
     balance -= amount;
     return true;
 }

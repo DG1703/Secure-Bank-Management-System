@@ -1,20 +1,17 @@
 #include "file_utils.h"
 #include <iostream>
 #include <cstdio>
-
 using namespace std;
 
 // Generate next account number
 int getNextAccountNumber() {
     ifstream in(FILE_NAME, ios::binary);
-
     int count = 0;
     Account acc;
 
     while (in.read((char*)&acc, sizeof(acc))) {
         count++;
     }
-
     in.close();
     return 1001 + count;
 }
@@ -30,7 +27,6 @@ bool findAccount(int accNo, Account &acc, streampos &pos) {
             return true;
         }
     }
-
     file.close();
     return false;
 }
@@ -47,7 +43,6 @@ void updateAccount(const Account &acc, streampos pos) {
 void deleteAccount(int accNo) {
     ifstream in(FILE_NAME, ios::binary);
     ofstream out("temp.dat", ios::binary);
-
     Account acc;
 
     while (in.read((char*)&acc, sizeof(acc))) {
@@ -55,10 +50,8 @@ void deleteAccount(int accNo) {
             out.write((char*)&acc, sizeof(acc));
         }
     }
-
     in.close();
     out.close();
-
     remove(FILE_NAME);
     rename("temp.dat", FILE_NAME);
 }

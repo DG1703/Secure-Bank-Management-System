@@ -25,11 +25,12 @@ The Secure Bank Management System allows users to create and manage bank account
 
 # Project Structure
   |
-  |->Secure-Bank-Management-System
-  |->main.cpp → Program entry point and menu handling
-  |->Account.h → Account class declaration
-  |->Account.cpp → Account class implementation
-  |->README.md → Project documentation
+  |->account.h - Account class declaration
+  |->account.cpp - Account class implementation
+  |->file_utils.h - Binary file utility function declarations
+  |->file_utils.cpp - Binary file handling implementation
+  |->main.cpp - Menu-driven program flow
+  |->accounts.dat - Binary data file (created at runtime)
 
 # How to Compile and Run
 - Using g++:

@@ -48,6 +48,4 @@ The Secure Bank Management System allows users to create and manage bank account
 
 # Developer
   Divya Garg
-Author
-
 Divya Garg

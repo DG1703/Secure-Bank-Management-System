@@ -7,7 +7,6 @@ private:
     char name[50];
     char password[20];
     double balance;
-
 public:
     // Account creation & authentication
     void createAccount(int accNo);
@@ -27,5 +26,4 @@ public:
     // Setter (used internally by file logic)
     void setBalance(double amount);
 };
-
 #endif
